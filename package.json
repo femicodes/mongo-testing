@@ -10,7 +10,7 @@
     "clean": "rimraf build",
     "build": "yarn run clean && babel server -d build",
     "dev": "DEBUG=express nodemon --exec babel-node server/index",
-    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "coverage": "nyc report --reporter=text-lcov | coveralls && nyc report --reporter=lcov",
     "test": "nyc mocha server/test/* --timeout 20000 -r @babel/register -r @babel/polyfill --exit"
   },
   "devDependencies": {
