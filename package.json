@@ -10,6 +10,7 @@
     "clean": "rimraf build",
     "build": "yarn run clean && babel server -d build",
     "dev": "DEBUG=express nodemon --exec babel-node server/index",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
     "test": "nyc mocha server/test/* --timeout 20000 -r @babel/register -r @babel/polyfill --exit"
   },
   "devDependencies": {
@@ -19,6 +20,7 @@
     "@babel/preset-env": "^7.5.4",
     "chai": "^4.2.0",
     "chai-http": "^4.3.0",
+    "coveralls": "^3.0.5",
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.2.0",
     "eslint-plugin-import": "^2.18.2",

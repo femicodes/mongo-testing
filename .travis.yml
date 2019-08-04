@@ -10,6 +10,8 @@ services:
   - mongodb
 env:
   global:
-    - CC_TEST_REPORTER_ID=05804ad0acb84cfd9f127a93c4f4a1a9e1ae2ae8c85228359c4b58423c2e80ac
+    - CC_TEST_REPORTER_ID=f3bc196a9076574e74ade7faa6e884683aa43121a4b089c616671715ec649beb
 script:
   - yarn run test
+after_script:
+  - npm run coverage
