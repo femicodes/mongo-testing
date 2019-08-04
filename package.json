@@ -1,0 +1,42 @@
+{
+  "name": "rest-api-boilerplate",
+  "version": "1.0.0",
+  "main": "server/index.js",
+  "repository": "https://github.com/femicodes/rest-api-boilerplate.git",
+  "author": "<femicodes@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node build/server",
+    "clean": "rimraf build",
+    "build": "yarn run clean && babel server -d build",
+    "dev": "DEBUG=express nodemon --exec babel-node server/index",
+    "test": "nyc mocha server/test/* --timeout 20000 -r @babel/register -r @babel/polyfill --exit"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.5.0",
+    "@babel/core": "^7.5.4",
+    "@babel/node": "^7.5.0",
+    "@babel/preset-env": "^7.5.4",
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.2.0",
+    "eslint-plugin-import": "^2.18.2",
+    "mocha": "^6.2.0",
+    "nodemon": "^1.19.1",
+    "nyc": "^14.1.1",
+    "rimraf": "^2.6.3"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.4.4",
+    "@babel/register": "^7.4.4",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "debug": "^4.1.1",
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1",
+    "helmet": "^3.20.0",
+    "mongoose": "^5.6.8",
+    "morgan": "^1.9.1"
+  }
+}

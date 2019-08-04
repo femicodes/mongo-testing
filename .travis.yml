@@ -1,0 +1,15 @@
+language: node_js
+node_js:
+  - "stable"
+cache:
+  directories:
+    - "node_modules"
+install:
+  - yarn install
+services:
+  - mongodb
+env:
+  global:
+    - CC_TEST_REPORTER_ID=L01Qbcc9KBH5bvT1MHcVQ4hwjwOsQ9sCc
+script:
+  - yarn run test
