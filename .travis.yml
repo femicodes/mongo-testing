@@ -10,6 +10,6 @@ services:
   - mongodb
 env:
   global:
-    - CC_TEST_REPORTER_ID=L01Qbcc9KBH5bvT1MHcVQ4hwjwOsQ9sCc
+    - CC_TEST_REPORTER_ID=05804ad0acb84cfd9f127a93c4f4a1a9e1ae2ae8c85228359c4b58423c2e80ac
 script:
   - yarn run test
