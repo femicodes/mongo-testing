@@ -36,7 +36,7 @@ mongoose.set('useCreateIndex', true);
 mongoose.connect(process.env.DEV_DB, { useNewUrlParser: true });
 
 if (process.env.NODE_ENV === 'test') {
-  mongoose.connect(process.env.TEST_DB, { useNewUrlParser: true });
+  mongoose.connect('mongodb://femi:forum0@ds157599.mlab.com:57599/forum-test', { useNewUrlParser: true });
 }
 
 app.listen(port, () => {
