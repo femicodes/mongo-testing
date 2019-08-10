@@ -27,11 +27,11 @@ class Response {
    * @returns {object} object
    * @memberof Response
    */
-  static success(res, code, payload, message = 'success') {
+  static success(res, code, data, message = 'success') {
     return res.status(code).json({
       status: code,
       message,
-      payload,
+      data,
     });
   }
 }

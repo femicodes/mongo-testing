@@ -5,9 +5,12 @@ import morgan from 'morgan';
 import cors from 'cors';
 import helmet from 'helmet';
 import mongoose from 'mongoose';
+import { config } from 'dotenv';
 import '@babel/polyfill';
 import api from './routes/index';
 import Response from './utils/Response';
+
+config();
 
 const app = express();
 const port = process.env.PORT || 6000;
@@ -30,7 +33,11 @@ mongoose.Promise = global.Promise;
 mongoose.set('useNewUrlParser', true);
 mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
-mongoose.connect('mongodb://femi:demotings0@ds253017.mlab.com:53017/demo-tings', { useNewUrlParser: true });
+mongoose.connect(process.env.DEV_DB, { useNewUrlParser: true });
+
+if (process.env.NODE_ENV === 'test') {
+  mongoose.connect(process.env.TEST_DB, { useNewUrlParser: true });
+}
 
 app.listen(port, () => {
   debugged(`Server running on port ${port}`);
