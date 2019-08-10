@@ -33,7 +33,7 @@ mongoose.Promise = global.Promise;
 mongoose.set('useNewUrlParser', true);
 mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
-mongoose.connect(process.env.DEV_DB, { useNewUrlParser: true });
+mongoose.connect('mongodb://femi:forum0@ds133086.mlab.com:33086/forum-dev', { useNewUrlParser: true });
 
 if (process.env.NODE_ENV === 'test') {
   mongoose.connect('mongodb://femi:forum0@ds157599.mlab.com:57599/forum-test', { useNewUrlParser: true });
